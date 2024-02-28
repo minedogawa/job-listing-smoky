@@ -2,9 +2,11 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Layout from "./Layout.jsx"
-import App from "./App.jsx"
+import Landing from "./Landing.jsx"
 import Jobs from "./pages/Jobs.jsx"
 import Description from "./pages/Description.jsx"
+import Login from "./pages/Login.jsx"
+import RequireAuth from "./components/RequireAuth.jsx"
 import "./index.css"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -12,9 +14,29 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Layout />}>
-					<Route index element={<App />} />
-					<Route path="jobs" element={<Jobs />} />
-					<Route path="description" element={<Description />} />
+					<Route index element={<Landing />} />
+
+					<Route path="authentication">
+						<Route path="login" element={<Login />} />
+					</Route>
+
+					<Route
+						path="jobs"
+						element={
+							<RequireAuth>
+								<Jobs />
+							</RequireAuth>
+						}
+					/>
+
+					<Route
+						path="description"
+						element={
+							<RequireAuth>
+								<Description />
+							</RequireAuth>
+						}
+					/>
 				</Route>
 			</Routes>
 		</BrowserRouter>

@@ -13,9 +13,12 @@ const App = () => {
 					</h1>
 					<p className="max-w-prose text-lg md:text-xl lg:text-2xl text-white mb-8 text-center leading-relaxed">Unlock a world of programming opportunities with our developer jobs landing page. Whether you're a seasoned developer or just starting out, discover exciting roles in tech hubs across the globe</p>
 					<div className="flex justify-center">
-						<Link to="/jobs" className="bg-cyan-dark hover:bg-[#eac77d] text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+						{/* <Link to="/jobs" className="bg-cyan-dark hover:bg-[#eac77d] text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
 							Start Your Journey Now!
-						</Link>
+						</Link> */}
+						<Link to="/authentication/login" className="bg-cyan-dark hover:bg-[#eac77d] text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                            Start Your Journey Now!
+                        </Link>
 					</div>
 				</main>
 				<img
